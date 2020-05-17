@@ -16,11 +16,11 @@
   document.querySelector('#new-task').onsubmit = () => {
 
   //Create a item on listed order
-  const li = document.createElement('li');
-  li.innerHTML = document.querySelector('#task').value;
+  const ol = document.createElement('ol');
+  ol.innerHTML = document.querySelector('#task').value;
 
   //Add new item to new task and plus 1, 2, 3
-  document.querySelector('#tasks').append(li);
+  document.querySelector('#tasks').append(ol);
 
   //When input task on the input bar, clear the input bar
   document.querySelector('#task').value= '';
