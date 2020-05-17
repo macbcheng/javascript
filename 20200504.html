@@ -3,30 +3,38 @@
 <body>
 
 
-
 <h2 style="color:red;text-align:left;">Healthcare Company</h2>
 
-<p id="demo">JavaScript can change HTML content.</p>
-
 <div>
-<ul> 1 write a sentence</ul>
-<ul> 2 add a feature </ul>
-<ul> 3 add a featrue 2 </ul>
-</div>
 
+  <script>
 
+  document.addEventListener('DOMContentLoaded', () => {
+  //Event Content vvv //
 
+  //query paragraph
+  document.querySelector('#new-task').onsubmit = () => {
 
-<div class="container">
-  <div class="alert alert-primary" role="alert">
-    This is an alert message. News!
-  </div>
-  <div class="alert alert-success" role="alert">
-    This is an alert message. Good!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    This is an alert message. Bad News!
-  </div>
+  //Create a item on listed order
+  const li = document.createElement('li');
+  li.innerHTML = document.querySelector('#task').value;
+
+  //Add new item to new task and plus 1, 2, 3
+  document.querySelector('#tasks').append(li);
+
+  //When input task on the input bar, clear the input bar
+  document.querySelector('#task').value= '';
+
+  //let item still list on the website without reloading.
+  // It cause website which will be list 1, 2, 3 not reloading to list 1 and list 1 and list 1
+  return false;
+  };
+  //query paragraph
+
+  //Event Content ^^^//
+
+  });
+  </script>
 
 
 
@@ -41,5 +49,16 @@
      color:blue;
    }
 </style>
+<title>Healthcare Company</title>
 
+</head>
+<body>
+   <h1>Tasks</h1>
+   <ul id="tasks">
+   </ul>
+   <form id="new-task">
+     <input id= "task" autocomplete="off" autofocus placeholder="New Task" type= "text">
+     <input type="submit">
+   </form>
+  </body>
 </html>
