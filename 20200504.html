@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <head>
+    <body>
 
+<h2 style="text-align:left;">Healthcare Company</h2>
 
-<h2 style="color:red;text-align:left;">Healthcare Company</h2>
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
 
 <div>
 
   <script>
 
-  //Event Content vvv //
+  //Event Content vvv Document Object Model//
   document.addEventListener('DOMContentLoaded', () => {
 
-  //query paragraph
+  //Input bar function
   document.querySelector('#new-task').onsubmit = () => {
 
   //Create a item on listed order
@@ -37,10 +44,56 @@
   </script>
 
 
-<img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*" >
+<head>
+    <script>
+        var know = {
+          //Patient versus(:) Doctor, Doctor can edit dialog to make the conversation more accurate
+
+          "hello" : "hi",
+          "how are you?" : "good",
+          "sick" : "We are US hospital and we have provided different medical services, what kind of sickness you have?",
+          "cold" : "You should drink lot of warm water and lot of vitamin C",
+          "I can not read" : "You should take bran’s dysfunction of the pill to improve your cognitive ability to read the paper",
+          "I can not drive" : " did you drink alcohol? You should find someone who can drive you to home",
+          "cough" : "You should drink a lot of water and have a big rest or seeing our US hospital",
+          "I have running nose" : "You should stay warm and drink water, hot tea, hot shower and keep exercise for  to prevent from getting worse",
+          "I'm worry about I have coronavirus" : "If you have following symptoms, fever, tiredness, dry cough, runny nose, sore throat, you had better to come to hospital to check yourself whether you have virus and prevent others from infecting by you",
+          "What is coronavirus?" : "Coronaviruses are a large family of viruses which may cause illness in animals or humans several coronaviruses are known to cause respiratory infections",
+          "How does coronavirus infect others?" : "It transmitt from respratory droplets",
+          "How to prevent coronavirus" : "Now the policy is regulate people to Stay home, Stop spread, Save lives. It is a way to help other and yourself",
+          "hi" : "We are US hospital, how can I help you? What kind of sickness do you have",
+          "你好" : "我們這裡是醫療診所，請問你有什麼相關可能疾病？",
+          "coronavirus" : "If you have all following symptoms, fever, tiredness, dry cough, runny nose, sore throat, you had better to come to hospital to check yourself whether you have virus and prevent others from infecting by you",
+
+        };
+
+        function talk() {
+          var user = document.getElementById("userBox").value;
+          document.getElementById("CureDialog").innerHTML += user + "<br>";
+          if (user in know) {
+             document.getElementById("CureDialog").innerHTML += know [user] + "<br>";
+          } else {
+             document.getElementById("CureDialog").innerHTML += "I don't understand. Can you clarify your sickness? <br>";
+          }
+        }
+    </script>
+
+    <body>
 
 
-<input type="button" value="Click me into Virtual assistant" style="float: bottomright;">
+      <div>
+      <p id="CureDialog" style="position: absolute; bottom: 0; right: 0; text-align:left; font-size:30px;font-family: Verdana;"> I'm a Virtual Robot Assistant, please enter your problem from here: </p>
+
+    </div>
+      <div>
+        <img src= "file:///Users/michael/Desktop/nurse.png" style="position: absolute; bottom: 2; right: 0; text-align:left;" />
+      </div>
+      <div>
+      <input id="userBox" style="position: absolute; bottom: 0; right: 0; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
+      <input type="submit"style="position: absolute; bottom: 0; right: 0; text-align:left;">
+    </div>
+    </body>
+</head>
 
 <style>
    input{
@@ -52,12 +105,13 @@
 
 </head>
 <body>
-   <h1>Express your negative thoughts here</h1>
+   <h1 style="font-size:100%; font-family:verdana;">Express your negative thoughts here</h1>
    <ul id="tasks">
    </ul>
    <form id="new-task">
      <input id= "task" autocomplete="off" autofocus placeholder="New Task" type= "text">
      <input type="submit">
    </form>
+
   </body>
 </html>
