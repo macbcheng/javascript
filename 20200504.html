@@ -3,10 +3,29 @@
   <head>
     <body>
 
-<h2 style="text-align:left;">Healthcare Company</h2>
+
+<h2 style="text-align:left;" font-family: Helvetica;>Healthcare Company</h2>
+<h1 style=" font-size:100%;" font-family: Verdana;> About Insurance News Coronaviruses-Update Contact-us</h2>
+
+
+
+
+<script>
+    window.onscroll = () => {
+        console.log('----');
+        console.log(window.innerHeight);
+        console.log(window.scrollY);
+        console.log(document.body.offsetHeight);
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            document.querySelector('body').style.background = 'white';
+        } else {
+            document.querySelector('body').style.background = 'white';
+        }
+    };
+</script>
+
 
 <p id="demo"></p>
-
 <script>
 var d = new Date();
 document.getElementById("demo").innerHTML = d;
@@ -82,18 +101,19 @@ document.getElementById("demo").innerHTML = d;
 
 
       <div>
-      <p id="CureDialog" style="position: absolute; bottom: 0; right: 0; text-align:left; font-size:30px;font-family: Verdana;"> I'm a Virtual Robot Assistant, please enter your problem from here: </p>
+      <p id="CureDialog" style="position: absolute; bottom: 0; right: 0; text-align:left; font-size:20px;font-family: Verdana;"> I'm a Virtual Robot Assistant, please enter your problem from below </p>
 
     </div>
       <div>
-        <img src= "file:///Users/michael/Desktop/nurse.png" style="position: absolute; bottom: 2; right: 0; text-align:left;" />
+        <img src= "https://i.ibb.co/9w4QYSg/nurse.png" style="position: absolute; bottom: 0; right: 0; text-align:left;" width="80" height = "80" />
       </div>
       <div>
-      <input id="userBox" style="position: absolute; bottom: 0; right: 0; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
-      <input type="submit"style="position: absolute; bottom: 0; right: 0; text-align:left;">
+      <input id="userBox" style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
+      <input type="submit"style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;">
     </div>
     </body>
 </head>
+
 
 <style>
    input{
