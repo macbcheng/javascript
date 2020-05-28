@@ -3,12 +3,26 @@
   <head>
     <body>
 
+<div>
+  <p> </p>
+</div>
 
-<h2 style="text-align:left;" font-family: Helvetica;>Healthcare Company</h2>
-<h1 style=" font-size:100%;" font-family: Verdana;> About Insurance News Coronaviruses-Update Contact-us</h2>
+<h2 style="text-align:left;font-size:20px;" font-family: Helvetica;>Healthcare Company</h2>
+
+  <div class="column">
+
+      <div class="col" style="background-color:white;text-align:left;">About</div>
+      <div class="col" style="background-color:white;text-align:left;">Insurance</div>
+      <div class="col" style="background-color:white;text-align:left;">News</div>
+      <div class="col" style="background-color:white;text-align:left;">Coronaviruses-Update</div>
+      <div class="col" style="background-color:white;text-align:left;">Contact-US</div>
+
+      <div>
+        <p> </p>
+      </div>
 
 
-
+  </div>
 
 <script>
     window.onscroll = () => {
@@ -24,8 +38,7 @@
     };
 </script>
 
-
-<p id="demo"></p>
+<p id="demo"style="color:red"></p>
 <script>
 var d = new Date();
 document.getElementById("demo").innerHTML = d;
@@ -64,53 +77,226 @@ document.getElementById("demo").innerHTML = d;
 
 
 <head>
+
+<style>
+
+</style>
+
+
     <script>
         var know = {
-          //Patient versus(:) Doctor, Doctor can edit dialog to make the conversation more accurate
 
+
+          //Patient versus(:) Doctor, Doctor can edit dialog to make the conversation more accurate
+          "hi" : "We are US hospital and we <br> have provided different medical services<br>, what kind of sickness you have?",
           "hello" : "hi",
           "how are you?" : "good",
-          "sick" : "We are US hospital and we have provided different medical services, what kind of sickness you have?",
-          "cold" : "You should drink lot of warm water and lot of vitamin C",
-          "I can not read" : "You should take bran’s dysfunction of the pill to improve your cognitive ability to read the paper",
-          "I can not drive" : " did you drink alcohol? You should find someone who can drive you to home",
-          "cough" : "You should drink a lot of water and have a big rest or seeing our US hospital",
-          "I have running nose" : "You should stay warm and drink water, hot tea, hot shower and keep exercise for  to prevent from getting worse",
-          "I'm worry about I have coronavirus" : "If you have following symptoms, fever, tiredness, dry cough, runny nose, sore throat, you had better to come to hospital to check yourself whether you have virus and prevent others from infecting by you",
-          "What is coronavirus?" : "Coronaviruses are a large family of viruses which may cause illness in animals or humans several coronaviruses are known to cause respiratory infections",
+          "how are you" : "I'm good. How can I help you?",
+          "sick" : "We are US hospital <br>and we have provided different medical services,<br> what kind of sickness you have?",
+          "cold" : "You should drink lot of warm water <br> and lot of vitamin C",
+          "I can not read" : "You should take bran’s dysfunction <br> of the pill to improve your cognitive ability to read the paper",
+          "I can not drive" : " did you drink alcohol? <br>You should find someone who can drive you to home",
+          "cough" : "You should drink a lot of water <br>and have a big rest or seeing our US hospital",
+          "I have running nose" : "You should stay warm and drink water, <br>hot tea, hot shower and keep exercise<br> for to prevent from getting worse",
+          "I'm worry about I have coronavirus" : "If you have following symptoms, <br>fever, tiredness, dry cough, runny nose, <br>sore throat, you had better to come to hospital<br> to check yourself whether you have virus<br> and prevent others from infecting by you",
+          "What is coronavirus?" : "Coronaviruses are a large family<br> of viruses which may cause illness in animals<br> or humans several coronaviruses are known <br>to cause respiratory infections",
           "How does coronavirus infect others?" : "It transmitt from respratory droplets",
-          "How to prevent coronavirus" : "Now the policy is regulate people to Stay home, Stop spread, Save lives. It is a way to help other and yourself",
-          "hi" : "We are US hospital, how can I help you? What kind of sickness do you have",
+          "How to prevent coronavirus" : "Now the policy is regulate people <br>to Stay home, Stop spread, Save lives.<br> It is a way to help other and yourself",
+          "hi" : "We are US hospital, how can I help you? <br> What kind of sickness do you have?",
           "你好" : "我們這裡是醫療診所，請問你有什麼相關可能疾病？",
-          "coronavirus" : "If you have all following symptoms, fever, tiredness, dry cough, runny nose, sore throat, you had better to come to hospital to check yourself whether you have virus and prevent others from infecting by you",
-
+          "coronavirus" : "If you have all following symptoms, <br>fever, tiredness, dry cough, runny nose, <br>sore throat, you had better to come to hospital<br> to check yourself whether you have virus <br>and prevent others from infecting by you",
+          "read" : "Can you read easy paragraph? <br> If you can't, you should start to read easier word.<br> If you still can't not read more easier word, <br> you should go to hospital.",
         };
 
+        /* taking sense function of word and output the word*/
         function talk() {
           var user = document.getElementById("userBox").value;
           document.getElementById("CureDialog").innerHTML += user + "<br>";
           if (user in know) {
              document.getElementById("CureDialog").innerHTML += know [user] + "<br>";
           } else {
-             document.getElementById("CureDialog").innerHTML += "I don't understand. Can you clarify your sickness? <br>";
+             document.getElementById("CureDialog").innerHTML += "I don't know. Can you clarify your sickness? <br>";
           }
         }
     </script>
 
+
+
+
     <body>
+<style>
+p2 {
+  background-color: dodgerblue;
+  border-radius: 30px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
 
-
-      <div>
-      <p id="CureDialog" style="position: absolute; bottom: 0; right: 0; text-align:left; font-size:20px;font-family: Verdana;"> I'm a Virtual Robot Assistant, please enter your problem from below </p>
+</style>
+      <div id="myDIV">
+      <p2 id="CureDialog" style="position: absolute; bottom: 5%; right: 7%; text-align:left; font-size:12px;font-family: Verdana;color:white"> I'm a Doctor Robot Assistant <br>Please enter your problem from below: </p2>
 
     </div>
       <div>
-        <img src= "https://raw.githubusercontent.com/macbcheng/javascript/master/nurse.png" style="position: absolute; bottom: 0; right: 0; text-align:left;" width="80" height = "80" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 75%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  width: 100%;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="container darker">
+<!-- Trigger/Open The Modal -->
+<button id="myBtn"><img src= "https://raw.githubusercontent.com/macbcheng/javascript/master/nurse.png" style="position: absolute; bottom: 7%; right: 0; text-align:left;" width="80" height = "80" /></button>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+
+
+    <div class="modal-header">
+      <span class="close">&times;</span>
+
+      <h2>Doctor Robot Assistant</h2>
+    </div>
+
+    <div class="modal-footer">
+      <h3>Questions? </h3>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
       </div>
       <div>
       <input id="userBox" style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
-      <input type="submit"style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;">
+      <i class="far fa-paper-plane"style="position: absolute; bottom: 0; right: 0;font-size:24px;"></i>
+
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     </div>
+
     </body>
 </head>
 
@@ -125,13 +311,142 @@ document.getElementById("demo").innerHTML = d;
 
 </head>
 <body>
-   <h1 style="font-size:100%; font-family:verdana;">Express your negative thoughts here</h1>
+   <h1 style="font-size:100%; font-family:verdana;">Customer Service Survey, enter your postive or negative Feedback</h1>
+   <h1 style="font-size:100%; font-family:verdana;">Internal company of complaints</h1>
    <ul id="tasks">
    </ul>
    <form id="new-task">
-     <input id= "task" autocomplete="off" autofocus placeholder="New Task" type= "text">
+     <input id= "task" autocomplete="off" autofocus placeholder="Feedback & Complaint" type= "text">
      <input type="submit">
+
    </form>
 
   </body>
+
+<div>
+<p> </p>
+<p> </p>
+<p> </p>
+</div>
+
+<!-- Draw option on website -->
+
+  <!-- <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <style>
+          .container {
+              text-align: left;
+          }
+      </style>
+      <script src="draw2.js"></script>
+  </head> -->
+
+  <!-- <body>
+      <div class="container">
+          <div id="options" class="row">
+              <h3 style="font-size:130%;text-align:left;"> click and drag some colorful from below</h3>
+              <select id="color-picker">
+                  <option value="black">Black</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+              </select>
+              <select id="thickness-picker">
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                  <option value=3 selected>3</option>
+                  <option value=4>4</option>
+                  <option value=5>5</option>
+                  <option value=6>6</option>
+                  <option value=7>7</option>
+                  <option value=8>8</option>
+                  <option value=9>9</option>
+                  <option value=10>10</option>
+              </select>
+              <button id="erase">Erase</button>
+          </div>
+      </div>
+      <svg id="draw">
+      </svg>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+          // state
+          let draw = false;
+
+          // elements
+          let points = [];
+          let lines = [];
+          let svg = null;
+
+          function render() {
+
+              // create the selection area
+              svg = d3.select('#draw')
+                      .attr('height', window.innerHeight)
+                      .attr('width', window.innerWidth);
+
+              svg.on('mousedown', function() {
+                  draw = true;
+                  const coords = d3.mouse(this);
+                  draw_point(coords[0], coords[1], false);
+              });
+
+              svg.on('mouseup', () =>{
+                  draw = false;
+              });
+
+              svg.on('mousemove', function() {
+                  if (!draw)
+                      return;
+                  const coords = d3.mouse(this);
+                  draw_point(coords[0], coords[1], true);
+              });
+
+              document.querySelector('#erase').onclick = () => {
+                  for (let i = 0; i < points.length; i++)
+                      points[i].remove();
+                  for (let i = 0; i < lines.length; i++)
+                      lines[i].remove();
+                  points = [];
+                  lines = [];
+              }
+
+          }
+
+          function draw_point(x, y, connect) {
+
+              const color = document.querySelector('#color-picker').value;
+              const thickness = document.querySelector('#thickness-picker').value;
+
+              if (connect) {
+                  const last_point = points[points.length - 1];
+                  const line = svg.append('line')
+                                  .attr('x1', last_point.attr('cx'))
+                                  .attr('y1', last_point.attr('cy'))
+                                  .attr('x2', x)
+                                  .attr('y2', y)
+                                  .attr('stroke-width', thickness * 2)
+                                  .style('stroke', color);
+                  lines.push(line);
+              }
+
+              const point = svg.append('circle')
+                               .attr('cx', x)
+                               .attr('cy', y)
+                               .attr('r', thickness)
+                               .style('fill', color);
+              points.push(point);
+          }
+
+          render();
+      });
+
+</script> -->
+
+
+  </body>
+
 </html>
