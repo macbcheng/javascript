@@ -20,8 +20,6 @@
       <div>
         <p> </p>
       </div>
-
-
   </div>
 
 <script>
@@ -87,25 +85,25 @@ document.getElementById("demo").innerHTML = d;
         var know = {
 
 
-          //Patient versus(:) Doctor, Doctor can edit dialog to make the conversation more accurate
-          "hi" : "We are US hospital and we <br> have provided different medical services<br>, what kind of sickness you have?",
+          //Patient versus(:) Doctor, Doctor can edit dialog to make the conversation more accurate and more helpful on disease
+          "hi" : "We are US hospital and we have provided different medical services<br>, what kind of sickness you have?",
           "hello" : "hi",
           "how are you?" : "good",
           "how are you" : "I'm good. How can I help you?",
-          "sick" : "We are US hospital <br>and we have provided different medical services,<br> what kind of sickness you have?",
-          "cold" : "You should drink lot of warm water <br> and lot of vitamin C",
-          "I can not read" : "You should take bran’s dysfunction <br> of the pill to improve your cognitive ability to read the paper",
-          "I can not drive" : " did you drink alcohol? <br>You should find someone who can drive you to home",
-          "cough" : "You should drink a lot of water <br>and have a big rest or seeing our US hospital",
-          "I have running nose" : "You should stay warm and drink water, <br>hot tea, hot shower and keep exercise<br> for to prevent from getting worse",
-          "I'm worry about I have coronavirus" : "If you have following symptoms, <br>fever, tiredness, dry cough, runny nose, <br>sore throat, you had better to come to hospital<br> to check yourself whether you have virus<br> and prevent others from infecting by you",
-          "What is coronavirus?" : "Coronaviruses are a large family<br> of viruses which may cause illness in animals<br> or humans several coronaviruses are known <br>to cause respiratory infections",
+          "sick" : "We are US hospital and we have provided different medical services, what kind of sickness you have?",
+          "cold" : "You should drink lot of warm water and lot of vitamin C",
+          "I can not read" : "You should take bran’s dysfunction of the pill to improve your cognitive ability to read the paper",
+          "I can not drive" : " did you drink alcohol? You should find someone who can drive you to home",
+          "cough" : "You should drink a lot of water and have a big rest or seeing our US hospital",
+          "I have running nose" : "You should stay warm and drink water, hot tea, hot shower and keep exercise for to prevent from getting worse",
+          "I'm worry about I have coronavirus" : "If you have following symptoms, fever, tiredness, dry cough, runny nose, sore throat, you had better to come to hospital to check yourself whether you have virus and prevent others from infecting by you",
+          "What is coronavirus?" : "Coronaviruses are a large family of viruses which may cause illness in animals or humans several coronaviruses are known to cause respiratory infections",
           "How does coronavirus infect others?" : "It transmitt from respratory droplets",
-          "How to prevent coronavirus" : "Now the policy is regulate people <br>to Stay home, Stop spread, Save lives.<br> It is a way to help other and yourself",
-          "hi" : "We are US hospital, how can I help you? <br> What kind of sickness do you have?",
+          "How to prevent coronavirus" : "Now the policy is regulate people to Stay home, Stop spread, Save lives. It is a way to help other and yourself",
+          "hi" : "We are US hospital, how can I help you? What kind of sickness do you have?",
           "你好" : "我們這裡是醫療診所，請問你有什麼相關可能疾病？",
-          "coronavirus" : "If you have all following symptoms, <br>fever, tiredness, dry cough, runny nose, <br>sore throat, you had better to come to hospital<br> to check yourself whether you have virus <br>and prevent others from infecting by you",
-          "read" : "Can you read easy paragraph? <br> If you can't, you should start to read easier word.<br> If you still can't not read more easier word, <br> you should go to hospital.",
+          "coronavirus" : "If you have all following symptoms, fever, tiredness, dry cough, runny nose, sore throat, you had better to come to hospital to check yourself whether you have virus and prevent others from infecting by you",
+          "read" : "Can you read easy paragraph? If you can't, you should start to read easier word. If you still can't not read more easier word, you should go to hospital.",
         };
 
         /* taking sense function of word and output the word*/
@@ -114,14 +112,30 @@ document.getElementById("demo").innerHTML = d;
           document.getElementById("CureDialog").innerHTML += user + "<br>";
           if (user in know) {
              document.getElementById("CureDialog").innerHTML += know [user] + "<br>";
+
           } else {
              document.getElementById("CureDialog").innerHTML += "I don't know. Can you clarify your sickness? <br>";
           }
         }
+
+
+
+
     </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#CureDialog").empty();
+  });
+});
+</script>
+
+<button>Clear</button>
 
     <body>
 <style>
@@ -132,11 +146,16 @@ p2 {
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
+  height: 90px;
+  width:220px;
+  word-wrap: break-word;
+  overflow:auto;
+  display: inline;
 }
 
 </style>
       <div id="myDIV">
-      <p2 id="CureDialog" style="position: absolute; bottom: 5%; right: 7%; text-align:left; font-size:12px;font-family: Verdana;color:white"> I'm a Doctor Robot Assistant <br>Please enter your problem from below: </p2>
+      <p2 id="CureDialog" style="position: absolute; bottom: 5%; right: 7%; text-align:left; font-size:14px;font-family: Verdana;color:white"> I'm a Doctor Robot Assistant <br>Please enter your problem from below: </p2>
 
     </div>
       <div>
@@ -148,20 +167,20 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* The Modal (background) */
 /* .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 75%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
-} */
+  /* position: fixed; /* Stay in place */
+  /* z-index: 1; /* Sit on top */
+  /* left: 0; */
+  /* top: 0; */
+  /* width: 75%; /* Full width */
+  /* height: 100%; /* Full height */
+  /* overflow: auto; /* Enable scroll if needed */
+  /* background-color: rgb(0,0,0); /* Fallback color */
+  /* background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* -webkit-animation-name: fadeIn; /* Fade in the background */
+  /* -webkit-animation-duration: 0.4s; */
+  /* animation-name: fadeIn; */
+  /* animation-duration: 0.4s */
+/* }  */
 
 /* Modal Content */
 /* .modal-content {
@@ -235,13 +254,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 <!-- <div class="container darker"> -->
 <!-- Trigger/Open The Modal -->
-<!-- <button id="myBtn"><img src= "https://raw.githubusercontent.com/macbcheng/javascript/master/nurse.png" style="position: absolute; bottom: 7%; right: 0; text-align:left;" width="80" height = "80" /></button> -->
+<!-- <button id="myBtn"> -->
+<!-- </button> -->
+
+  <img src= "https://raw.githubusercontent.com/macbcheng/javascript/master/nurse.png" style="position: absolute; bottom: 7%; right: 0; text-align:left;" width="80" height = "80" />
 <!-- </div> -->
 
 <!-- The Modal -->
 <!-- <div id="myModal" class="modal">
 
-  <!-- Modal content -->
+  <! Modal content -->
   <!-- <div class="modal-content">
 
 
@@ -254,10 +276,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <div class="modal-footer">
       <h3>Questions? </h3> -->
 
-    </div> -->
+    <!-- </div>
   </div>
 
-</div>
+</div> -->
 
 <!-- <script>
 // Get the modal
@@ -289,8 +311,8 @@ window.onclick = function(event) {
 
       </div>
       <div>
-      <input id="userBox" style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
-      <i class="far fa-paper-plane"style="position: absolute; bottom: 0; right: 0;font-size:24px;"></i>
+      <input id="userBox" autocomplete="off" autofocus placeholder="message" onfocus="this.value=''" style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
+      <i class="far fa-paper-plane" style="position: absolute; bottom: 0; right: 0;font-size:24px;"></i>
 
       <meta name='viewport' content='width=device-width, initial-scale=1'>
       <script src='https://kit.fontawesome.com/a076d05399.js'></script>
