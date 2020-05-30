@@ -46,7 +46,8 @@ document.getElementById("demo").innerHTML = d;
 
   <script>
 
-  //Event Content vvv Document Object Model//
+
+  // DOM(Document Object Model)
   document.addEventListener('DOMContentLoaded', () => {
 
   //Input bar function
@@ -114,11 +115,9 @@ document.getElementById("demo").innerHTML = d;
              document.getElementById("CureDialog").innerHTML += know [user] + "<br>";
 
           } else {
-             document.getElementById("CureDialog").innerHTML += "I don't know. Can you clarify your sickness? <br>";
+             document.getElementById("CureDialog").innerHTML += "I don't understand. Can you clarify your sickness? <br>";
           }
         }
-
-
 
 
     </script>
@@ -127,7 +126,7 @@ document.getElementById("demo").innerHTML = d;
 
 
 </script>
-<script>
+<!-- <script>
 $(document).ready(function(){
   $("button").click(function(){
     $("#CureDialog").empty();
@@ -135,7 +134,7 @@ $(document).ready(function(){
 });
 </script>
 
-<button>Clear</button>
+<button>Clear</button> -->
 
     <body>
 <style>
@@ -146,11 +145,8 @@ p2 {
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
-  height: 90px;
   width:220px;
   word-wrap: break-word;
-  overflow:auto;
-  display: inline;
 }
 
 </style>
@@ -311,7 +307,7 @@ window.onclick = function(event) {
 
       </div>
       <div>
-      <input id="userBox" autocomplete="off" autofocus placeholder="message" onfocus="this.value=''" style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
+      <input id="userBox" autocomplete="off" autofocus placeholder="type message" onfocus="this.value=''" style="position: absolute; bottom: 0; right: 0;font-size:15px; text-align:left;"type="text" onkeydown="if(event.keyCode == 13){talk ()}">
       <i class="far fa-paper-plane" style="position: absolute; bottom: 0; right: 0;font-size:24px;"></i>
 
       <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -333,20 +329,23 @@ window.onclick = function(event) {
 
 </head>
 <body>
-   <h1 style="font-size:100%; font-family:verdana;">Customer Service Survey, enter your postive or negative Feedback</h1>
-   <h1 style="font-size:100%; font-family:verdana;">Internal company of complaints</h1>
-   <ul id="tasks">
+   <!-- <h1 style="font-size:100%; font-family:verdana;">Internal company of complaints</h1> -->
+   <!-- <ul id="tasks">
    </ul>
    <form id="new-task">
-     <input id= "task" autocomplete="off" autofocus placeholder="Feedback & Complaint" type= "text">
-     <input type="submit">
+     <input id= "task" autocomplete="off" autofocus placeholder="Anonymous Complaints" type= "text">
+     <input type="submit"> -->
 
    </form>
 
   </body>
 
 <div>
-<p> </p>
+<p>For the robot assistant, doctor can go inside the code for editing conversation to make dialog more efficient to cure patient.
+The purpose of the robot is for reducing doctor's usual works on small diseases, such as cold, cough and running nose. Thus, if the assistant can reduce
+doctor's usual workload, doctor can spend more time on curing bigger diseases. There's a story that doctor mostly spend 8 hours a day on curing cold, cough, fever problems.
+It waste doctor's ability and cause doctor bored on their work. The assistant can help doctor do more important things on curing more serious diseases on patients.
+On the other hand, the assitant now is still beta version and it can easily deploy to any other healthcare company of websites.</p>
 <p> </p>
 <p> </p>
 </div>
