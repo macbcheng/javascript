@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body>
 
-<head>
+<style>
+body {
+  background-color: lightgreen;
+}
 
-<style> 
-
-
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3pxx solid #73AD21;
+  padding: 10px;
+}
 </style>
 
 <div class="center">
 <META http-equiv='Content-Type' content='text/html;charset=utf-8'>
-    <FORM action="https://n.gomypay.asia/ShuntClass.aspx" method="post">
-    <h1 style="text-align:center;">請輸入以下資料繳費購買</h1>
+    <FORM action="https://n.gomypay.asia/ShuntClass.aspx" method="post" target="_blank" onsubmit="try {return window.confirm(&quot;This form may not function properly due to certain security constraints.\nContinue?&quot;);} catch (e)
+    {return false;}">
     <input name='Send_Type<br>' value='信用卡交易型態請輸入0'>
     <input name='Pay_Mode_No<br>' value='付款模式請填2'>
     <input name='CustomerId<br>' value='商店代號'>
     <input name='Order_No<br>' value='交易單號'>
-    <input name='CardNo<br>' value='信用卡號'>
+    <input name='CardNo<br>' value='卡號'>
     <input name='ExpireDate<br>' value='卡片有效日期(YYMM)'>
     <input name='CVV<br>' value='卡片認證碼'>
     <input name='TransMode<br>' value='交易模式 '>
     <input name='Amount<br>' value='交易金額'>
     <input name='Installment<br>' value='期數'>
     <input name='TransCode<br>' value='交易類別請填00'>
-    <input name='Buyer_Name<br>' value='姓名Name'>
-    <input name='Buyer_Telm<br>' value='電話Phone'>
-    <input name='Buyer_Mail<br>' value='信箱Email'>
-    <input name='Buyer_Memo<br>' value='商品資訊Information'>
+    <input name='Buyer_Name<br>' value='消費者姓名'>
+    <input name='Buyer_Telm<br>' value='消費者電話'>
+    <input name='Buyer_Mail<br>' value='消費者email'>
+    <input name='Buyer_Memo<br>' value='商品資訊'>
     <input name='e_return<br>' value='1'>
     <input name='Str_Check<br>' value='交易驗證密碼'>
     <input name="button1" type="submit" class="sub_buttom" id="button1" value="確定付款(請勿重複 點選)" >
