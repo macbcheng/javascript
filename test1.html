@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .jumbotron {
+    background-color: white;
+    color: black;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: white;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar-brand{
+    position:absolute;
+    top: 4px;
+    left: 16px;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: black !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://t2.vdarts.tw/"><img src="https://t2.vdarts.tw/tpl/vandweb_com/Public/images/v-web.png" alt="logo" style="width:90px;"></a>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>WEB HOSTING</h2><br>
+      <h4>網站空間(虛擬主機)是用來存放網站所有網頁檔案，簡單的說，就是提供給您一定容量的磁碟空間，存放您的網頁，並且協助您將獨立網址指向到您的網頁空間。
+
+V&WEB提供輕鬆架站功能，協助您建立網頁，並有CDN技術幫您的加速瀏覽網頁速度，提供Vsights監督流量和免費的DDOS防護，無須另外付費，也能簡單架設跟使用網站。
+</h4><br>
+
+      <br><button onclick="https://www.vandweb.com/cloud_hosting/global">詳情請見</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>VPS</h2><br>
+      <h4>VPS（Virtual Private Server 虛擬專用伺服器）技術，將一部伺服器分割成多個相互隔離的虛擬專享伺服器的優質服務。 每個VPS的運行和管理都與一臺獨立主機完全相同，都可分配獨立IP地址、獨立CPU資源等獨立資源。
+總而言之，V&WEB提供的VPS是一項具備高彈性、高質量及低成本效益的伺服器解決方案，是高端虛擬主機用戶的最佳選擇。
+</h4><br>
+
+<br><button onclick="https://www.vandweb.com/vps">需要各國資源詳情請見</button><br>
+<br><button onclick="https://www.vandweb.com/vps/taiwan">需要台灣VPS請參考</button><br>
+
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <!-- <img src="\tpl\vandweb_com\Portal\Area\Introduction_image\banner3.png" style="width:100%"> -->
+<h2>Dedicated Server<h2>
+
+  <h4>獨立主機可讓擁有者擁有伺服器及其資源的專屬存取權，讓您的應用程式享有最優異且最佳化的效能。<br>您可以完全控管其內容，讓您按照企業需求進行設定、變更伺服器設定、新增軟體等各種功能，如果有需要，
+    也能加強安全防護。<br><br><br>
+如果您對於網站、資料庫、郵件、遊戲、臉書影片串流等有客製化需求，想擁有屬於私人且安全快速的操作環境。<br>您也可以租賃一個以上，提供更優秀的效能。如果您是較中型 (或成長快速) 以上的企業，我們就更推薦您使用獨立主機。
+</h4>
+  <br>
+<style>
+.row {
+  position:relative;
+  color: black;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+div.row{
+  word-wrap: break-word;
+}
+div.col-sm-3{
+  word-wrap: break-word;
+}
+div.centered{
+  word-wrap: break-word;
+}
+</style>
+
+
+<!--
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="\tpl\vandweb_com\Portal\Area\Introduction_image\image2-1.png" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <img src="\tpl\vandweb_com\Portal\Area\Introduction_image\image2-2.png" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <img src="\tpl\vandweb_com\Portal\Area\Introduction_image\image2-3.png" class="img-responsive" style="width:100%" alt="Image">
+    </div> -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div>
+      <h4><br></h4>
+    </div>
+    <h5 style="font-size:19px">當您付款後並指定作業系統後，我們會在48小時內交付機器資訊給您(看不同地區可能會有差異)，<br>收到後即可開始使用，V&WEB團隊擁有365/24/7全年不間斷服務，遇到任何問題皆可幫您快速解決。</h5>
+
+<br><button onclick="https://www.vandweb.com/dedicated">想了解更多嗎? 規格請參考</button><br>
+
+<h6 style="color:Tomato;font-size:25px;">如果您對服務器有任何疑問，請聯繫我們的客服以取得進一步的說明。</h6>
+
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
+<style>
+h2 {
+  text-align:center;
+}
+</style>
+  <h2>更多產品</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4 style="font-size:190%;">"全球經銷飛鏢遊戲機"<br><span></span></h4>
+      </div>
+      <div class="item">
+        <h4 style="font-size:190%;">"全球伺服器託管租用"<br><span></span></h4>
+      </div>
+      <div class="item">
+        <h4 style="font-size:190%;">"藝術產品線上商城"<br><span></span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center"></h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p style="font-family:Verdana">聯絡資訊</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Victoria, Mahe</p>
+      <p><span class="glyphicon glyphicon-phone"></span> Skype 24/7:letswin766@gmail.com</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> support@vandweb.com</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> sales@vandweb.com</p>
+    </div>
+    <form>
+      <div class="input-group">
+        <input type="email" class="form-control" size="30"style="width:200px" placeholder="電子信箱" required>
+          <button type="button" class="btn btn-danger">免費訂閱電子報</button>
+        </div>
+      </div>
+    </form>
+    <div>
+    <a href="https://www.mincolors.com/">前往線上藝術商城<br>
+    <a href="http://www.vdarts.tw/main">前往全球經銷飛鏢機
+    </div>
+    <!-- <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+    });
+  }
+  });
+})
+</script>
+
+
+
+</body>
+</html>
