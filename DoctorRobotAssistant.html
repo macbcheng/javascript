@@ -196,87 +196,6 @@ p2 {
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
-/* The Modal (background) */
-/* .modal {
-  display: none; /* Hidden by default */
-  /* position: fixed; /* Stay in place */
-  /* z-index: 1; /* Sit on top */
-  /* left: 0; */
-  /* top: 0; */
-  /* width: 75%; /* Full width */
-  /* height: 100%; /* Full height */
-  /* overflow: auto; /* Enable scroll if needed */
-  /* background-color: rgb(0,0,0); /* Fallback color */
-  /* background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  /* -webkit-animation-name: fadeIn; /* Fade in the background */
-  /* -webkit-animation-duration: 0.4s; */
-  /* animation-name: fadeIn; */
-  /* animation-duration: 0.4s */
-/* }  */
-
-/* Modal Content */
-/* .modal-content {
-  position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
-} */
-
-/* The Close Button */
-/* .close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-} */
-
-/* .close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-} */
-
-/* .modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-
-} */
-
-/* .modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-  width: 100%;
-} */
-
-/* Add Animation */
-/* @-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0}
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0}
-  to {opacity: 1}
-} */
 </style>
 </head>
 <body>
@@ -290,7 +209,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <!-- </button> -->
 
   <img src= "https://raw.githubusercontent.com/macbcheng/javascript/master/nurse.png" style="position: absolute; bottom: 7%; right: 0; text-align:left;" width="80" height = "80" />
-<!-- </div> -->
+
 
 <!-- The Modal -->
 <!-- <div id="myModal" class="modal">
@@ -386,122 +305,12 @@ Moreover, the assitant is still beta version but it also can easily deploy to an
 <p> </p>
 </div>
 
-<!-- Draw option on website -->
 
-  <!-- <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <script src="https://d3js.org/d3.v4.min.js"></script>
-      <style>
-          .container {
-              text-align: left;
-          }
-      </style>
-      <script src="draw2.js"></script>
-  </head> -->
 
-  <!-- <body>
-      <div class="container">
-          <div id="options" class="row">
-              <h3 style="font-size:130%;text-align:left;"> click and drag some colorful from below</h3>
-              <select id="color-picker">
-                  <option value="black">Black</option>
-                  <option value="red">Red</option>
-                  <option value="blue">Blue</option>
-                  <option value="green">Green</option>
-              </select>
-              <select id="thickness-picker">
-                  <option value=1>1</option>
-                  <option value=2>2</option>
-                  <option value=3 selected>3</option>
-                  <option value=4>4</option>
-                  <option value=5>5</option>
-                  <option value=6>6</option>
-                  <option value=7>7</option>
-                  <option value=8>8</option>
-                  <option value=9>9</option>
-                  <option value=10>10</option>
-              </select>
-              <button id="erase">Erase</button>
-          </div>
-      </div>
-      <svg id="draw">
-      </svg>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
 
-          // state
-          let draw = false;
 
-          // elements
-          let points = [];
-          let lines = [];
-          let svg = null;
 
-          function render() {
-
-              // create the selection area
-              svg = d3.select('#draw')
-                      .attr('height', window.innerHeight)
-                      .attr('width', window.innerWidth);
-
-              svg.on('mousedown', function() {
-                  draw = true;
-                  const coords = d3.mouse(this);
-                  draw_point(coords[0], coords[1], false);
-              });
-
-              svg.on('mouseup', () =>{
-                  draw = false;
-              });
-
-              svg.on('mousemove', function() {
-                  if (!draw)
-                      return;
-                  const coords = d3.mouse(this);
-                  draw_point(coords[0], coords[1], true);
-              });
-
-              document.querySelector('#erase').onclick = () => {
-                  for (let i = 0; i < points.length; i++)
-                      points[i].remove();
-                  for (let i = 0; i < lines.length; i++)
-                      lines[i].remove();
-                  points = [];
-                  lines = [];
-              }
-
-          }
-
-          function draw_point(x, y, connect) {
-
-              const color = document.querySelector('#color-picker').value;
-              const thickness = document.querySelector('#thickness-picker').value;
-
-              if (connect) {
-                  const last_point = points[points.length - 1];
-                  const line = svg.append('line')
-                                  .attr('x1', last_point.attr('cx'))
-                                  .attr('y1', last_point.attr('cy'))
-                                  .attr('x2', x)
-                                  .attr('y2', y)
-                                  .attr('stroke-width', thickness * 2)
-                                  .style('stroke', color);
-                  lines.push(line);
-              }
-
-              const point = svg.append('circle')
-                               .attr('cx', x)
-                               .attr('cy', y)
-                               .attr('r', thickness)
-                               .style('fill', color);
-              points.push(point);
-          }
-
-          render();
-      });
-
-</script> -->
 
 
   </body>
