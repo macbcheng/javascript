@@ -144,7 +144,7 @@ document.getElementById("demo").innerHTML = d;
           var user = document.getElementById("userBox").value;
           document.getElementById("CureDialog").innerHTML += user + "<br>";
           if (user in know) {
-             document.getElementById("CureDialog").innerHTML += know [user] + "<br>";
+             document.getElementById("CureDialog").innerHTML += know [user] + "<br><br>";
           } else {
              document.getElementById("CureDialog").innerHTML += "I don't know. Can you clarify your sickness? <br>";
           }
