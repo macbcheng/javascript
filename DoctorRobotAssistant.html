@@ -142,9 +142,9 @@ document.getElementById("demo").innerHTML = d;
         /* taking sense function of word and output the word*/
         function talk() {
           var user = document.getElementById("userBox").value;
-          document.getElementById("CureDialog").innerHTML += user + "<br>";
+          document.getElementById("CureDialog").innerHTML += user + "<br><br>";
           if (user in know) {
-             document.getElementById("CureDialog").innerHTML += know [user] + "<br><br>";
+             document.getElementById("CureDialog").innerHTML += know [user] + "<br>";
           } else {
              document.getElementById("CureDialog").innerHTML += "I don't know. Can you clarify your sickness? <br>";
           }
